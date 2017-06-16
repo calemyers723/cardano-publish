@@ -90,6 +90,9 @@
       margin-right: 5px; }
   #navhider ul li .select-language.bootstrap-select li a {
     padding-top: 5px; }
+  #navhider ul li .select-language.bootstrap-select button.selectpicker {
+    color: #a8a8a8;
+    border-color: #a8a8a8; }
 
 #footer h4 {
   color: #8c8c8c;
@@ -114,7 +117,7 @@
     -webkit-border-radius: 30px;
     border-radius: 30px;
     font-size: 100%;
-    margin: 0 12px 0 0;
+    margin: 0 10px 0 0;
     text-align: center; }
     #footer .social_icons a.fa {
       vertical-align: middle; }
