@@ -37,7 +37,8 @@ var lowerie = false;
 <link rel="stylesheet" href="/css/cf.0.0.391.css" type="text/css" media="all" />
 <link rel="stylesheet" href="/css/main.css" type="text/css" media="all" />
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" type="text/css" media="all" />
-<link href="https://fonts.googleapis.com/css?family=Lato:300,700,900" rel="stylesheet" />
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.2/css/bootstrap-select.min.css" type="text/css" media="all" />
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/flag-icon-css/0.8.2/css/flag-icon.min.css" type="text/css" media="all" />
 
 <link hreflang="en" href="/" rel="alternate" />
 <link hreflang="ja" href="/ja/" rel="alternate" />
@@ -46,7 +47,8 @@ var lowerie = false;
 <script type="text/javascript" src="/js/jquery.js"></script>
 <script type="text/javascript" src="/js/bs.js"></script>
 <script type="text/javascript" src="/js/functions.0.3.js"></script>
-<script type="text/javascript" src="/js/custom.js?v=1"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.2/js/bootstrap-select.min.js"></script>
+<script type="text/javascript" src="/js/custom.js?v=9"></script>
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -97,7 +99,7 @@ var lowerie = false;
   <!-- <li class="faq "><a href="/faq/">FAQ</a></li> -->
   <li class="blog "><a href="/blog/">Blog</a></li>
   <li>
-    <div class="lang_switch" style="padding-top: 28px;">
+    <!-- <div class="lang_switch" style="padding-top: 28px;">
       <a href="/project/" class="en" title="English">
       <span class="none">English</span>
       <img src="/images/flags/en.png" width="19" height="14" alt="" />
@@ -106,8 +108,19 @@ var lowerie = false;
       <span class="none">日本語</span>
       <img src="/images/flags/ja.png" width="19" height="14" alt="" />
       </a>
-    </div>
+    </div> -->
+
+    <select class="select-language hidden" data-width="fit">
+      <option data-content='<span class="flag-icon flag-icon-us"></span> English' val="en">English</option>
+      <option  data-content='<span class="flag-icon flag-icon-jp"></span> 日本語' val="ja">日本語</option>
+      <!-- <option  data-content='<span class="flag-icon flag-icon-cn"></span> 中文'>中文</option> -->
+    </select>
   </li>
+  <input type="hidden" id="language" value="en">
+  <input type="hidden" id="default-url" value="/project/">
+  <a href="/project/" class="hidden" id="en-url"></a>
+  <a href="/ja/project/" class="hidden" id="ja-url"></a>
+  <a href="/cn/project/" class="hidden" id="cn-url"></a>
 </ul>
 
           </div>

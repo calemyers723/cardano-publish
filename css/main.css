@@ -76,6 +76,20 @@
   font-size: 14.0px;
   font-style: normal;
   font-weight: 500; }
+#navhider ul li .select-language.bootstrap-select {
+  margin-top: 25px;
+  font-family: Rubik;
+  font-size: 14.0px;
+  font-style: normal;
+  font-weight: 500;
+  display: inline-block !important; }
+  #navhider ul li .select-language.bootstrap-select span {
+    font-weight: 500;
+    font-size: 14.0px; }
+    #navhider ul li .select-language.bootstrap-select span.flag-icon {
+      margin-right: 5px; }
+  #navhider ul li .select-language.bootstrap-select li a {
+    padding-top: 5px; }
 
 #footer h4 {
   color: #8c8c8c;
