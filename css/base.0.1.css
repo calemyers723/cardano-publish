@@ -1,0 +1,74 @@
+a{outline:none!important}
+a:focus{text-decoration:none;color:inherit}
+hr{clear:both;margin:10px 0}
+body{padding-top:0px}
+.italic{font-style: italic}
+.c_fff{color: #fff}
+.c_aaa{color: #aaa}
+.c_bbb{color: #bbb}
+.c_ccc{color: #ccc}
+.c_ddd{color: #ddd}
+.c_eee{color: #eee}
+
+.nopad,.pd0 [class*="col-"],.pd0{padding:0;}
+.pdl0{padding-left:0;}
+.pdr0{padding-right:0;}
+.margin0{margin:0!important}
+.margint0{margin-top:0!important}
+.marginr0{margin-right:0!important}
+.marginb0{margin-bottom:0!important}
+.marginl0{margin-left:0!important}
+.border0{border:0}
+.alignright{float:right}
+.alignleft{float:left}
+.aligncenter{margin:auto;display:block}
+.entry{padding:10px 0}
+.fullwidth{width:100%;height:auto!important}
+.clear{clear:both}
+.none{display:none}
+.block{display:block}
+.inline-block{display:inline-block}
+.inline{display:inline}
+.nolist{list-style-type:none}
+.bold{font-weight:500}
+h1,h1 a{font-weight:200}
+.page-title{font-size:400%;line-height:1.1;font-weight:200}
+.archive .page-title{font-size:250%;line-height:1.1}
+h1{font-size:250%}
+h2{font-size:200%}
+h3{font-size:145%; font-weight: 500;}
+h4{font-size:135%;}
+h5{font-size:130%}
+@media (max-width:768px){.page-title{font-size:230%!important;line-height:1.1;margin-top:.5em}
+}
+@media (max-width:500px){h1{font-size:160%}
+.page-title{font-size:160%!important}
+h2{font-size:140%}
+h3{font-size:130%}
+h4{font-size:120%}
+h5{font-size:110%}
+}
+blockquote{border:0;padding:0;font-size:140%;}
+blockquote p{font-weight:200;line-height:1.35;}
+.normal{font-weight:normal}
+.light{font-weight:200}
+.uppercase{text-transform:uppercase}
+h1 a:hover,h2 a:hover,h3 a:hover,.metadata .badge a,.page-title a,.nodec,.nodec:hover{text-decoration:none}
+.small{font-size:77%}
+.smaller{font-size:82%}
+.big{font-size:150%}
+.bigger{font-size:126%}
+.txtnoshade{text-shadow:transparent 0 0 0!important}
+hr{ border-color:#1F3737;}
+.header hr{ border-color:#fff;opacity:.2;}
+hr.sm{ width: 70px; margin:2em auto}
+hr.md{ width: 150px; margin:2em auto}
+hr.lg{ width: 300px; margin:2em auto}
+ul.typenone{list-style-type:none}
+ul.flat li{display:inline-block}
+
+.bg_trans{background: transparent;}
+
+
+
+
