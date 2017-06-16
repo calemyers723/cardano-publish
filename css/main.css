@@ -136,7 +136,8 @@
   margin: 0; }
   #footer .panel-group .panel {
     border: 0;
-    padding: 10px 0 0 0; }
+    padding: 10px 0 0 0;
+    background-color: #fff; }
     #footer .panel-group .panel ol {
       margin: 0;
       font-family: Rubik;
