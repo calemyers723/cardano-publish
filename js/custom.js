@@ -14,7 +14,11 @@ jQuery(document).ready(function() {
 
   var language = jQuery('#language').val();
   if (language == 'ja') {
-    jQuery('.select-language').val('日本語');
+    jQuery('.select-language').val('ja');
+  } else if (language == 'cn') {
+    jQuery('.select-language').val('cn');
+  } else {
+    jQuery('.select-language').val('en');
   }
   jQuery('.select-language').selectpicker();
 
@@ -22,12 +26,12 @@ jQuery(document).ready(function() {
     console.log(jQuery(this).val());
     var language = jQuery(this).val();
     var defaultUrl = jQuery('#default-url').val();
-    if (language == 'English') {
-      // jQuery('#en-url').trigger('click');
+    if (language == 'en') {
       window.location.href = window.location.origin + defaultUrl;
-    } else if (language == '日本語') {
-      // jQuery('#ja-url').trigger('click');
+    } else if (language == 'ja') {
       window.location.href = window.location.origin + '/ja' + defaultUrl;
+    } else if (language == 'cn') {
+      window.location.href = window.location.origin + '/cn' + defaultUrl;
     }
 
   })
