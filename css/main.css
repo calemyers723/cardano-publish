@@ -658,7 +658,9 @@ a:hover, a:focus {
     width: calc(100% - 80px); }
     .blog .page .blogpost .post-img .absolute h1 {
       color: white;
-      margin-bottom: 20px; }
+      margin-bottom: 20px;
+      font-size: 29px;
+      font-family: Quicksand; }
     .blog .page .blogpost .post-img .absolute h2 {
       color: white;
       margin: 0; }
