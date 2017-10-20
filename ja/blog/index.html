@@ -2,7 +2,7 @@
 <html>
   
   <head>
-<title> -  Cardano Foundation</title>
+<title></title>
 <meta charset="utf-8">
 
 <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -143,6 +143,220 @@ var lowerie = false;
         <div class="post-img">
           <div class="absolute">
             <div class="date">
+              <span class="" style="text-transform: uppercase;">October 20, 2017 &#8226; Jane Wild</span>
+            </div>
+            <h1 class="title">カルダノの取引手数料はどうなっているか</h1>
+            <h2 class="sub-title"></h2>
+          </div>
+          <img src="/images/blog/blog-5.jpg" alt="">
+        </div>
+        <div class="post">
+          <div class="overview">
+            <h3 id="section">なぜ取引手数料が必要なのか？</h3>
+
+<p>カルダノのような仮想通貨に取引手数料が必要になるのは主に二つ理由があります：</p>
+
+<p>プロトコルをうまく動くためにカルダノノードを運営ている人は時間、金銭と努力をかけているため、補償とインセンティブを与える必要があります。ビットコインでマイニングしてたブロックで新たな通貨が作られるとは対照的に、カルダノのプロトコル内の参加者の唯一の収入源が取引手数料になります。</p>
+
+<p>取引手数料の二つ目の理由はDDoS（分散型サービス拒否）攻撃を防止するためにあります。DDoS攻撃では、加害者はネットワークをダミートランザクションで溢れさせようとします。このような攻撃が攻撃者にとってコストが高くなれば、それぞれのダミートランザクションのために高い料金を払う事が必要になり攻撃を断念するでしょう。</p>
+
+<h3 id="section-1">取引手数料はどのように機能するのか？</h3>
+<p>誰かがある量のAdaを送金したい時に、そのトランザクションのための手数料がいくらかかるか計算されます。取引を有効にするために、そのいくらかの手数料は含まれなければなりません（送金者が望めばもっと高い手数料を支払う事も自由です）。全ての手数料はバーチュアルプールに集められて、その後カルダノプロトコルの参加者達に分配されます。</p>
+
+<p>最小手数料はどのように計算されているのか？
+取引の最小手数料は公式によって計算されます。</p>
+
+<p>a + b × size,</p>
+
+<p>‘a’と’b’が定数であり、’size’はバイトでの取引トランザクションサイズを表します。今の所、定数の’a’と’b’は以下の値となっています。</p>
+
+<p>a = 0.155381 ADA,
+b = 0.000043946 ADA/Byte.</p>
+
+<p>これは最低0.155381ADAが掛かる事を意味しています。そして取引サイズ（バイト）ごとに追加コストとして0.000043946ADAが加算されます。例として、200バイト（一般的によくあるサイズ）の取引での手数料計算式は以下になります</p>
+
+<p>0.155381 ADA + 0.000043946 ADA/Byte × 200 Byte = 0.1641702 ADA.</p>
+
+<p>なぜこの定式公式を選んだのか？—’a’というパラメーターを持つ理由は上記の通りDDoS攻撃を防止するためです。どんなに小さなダミートランザクションでも、何千も生成していれば攻撃側を傷つけるには十分な手数料コストがかかるようになっています。パラメーター’b’は実際のコストを反映するために導入されています：小さい取引を保存するときよりも大きい取引を保存する時の方がコンピュータメモリーをより多く必要としますので、小さいものより大きい取引の方が高くなります。</p>
+
+<p>パラメーター’a’と’b’の値を特定するためにはこのような質問に答えなければなりませんでした。</p>
+
+<p>コンピューターメモリーの1バイトはどれくらい高いのか？
+取引は平均的にどれくらい大きいのか？
+フルノードを起動させるのにコストは幾ら掛かるのか？
+この質問に対して答えを推計しなければなりませんでしたが、今はカルダノが稼働しているので、統計を集めてより的確な答えを出す事が可能になります。つまり将来的には実施のコストをより良く反映するために’a’と’b’は調節されます。</p>
+
+<p>トラフィック及び運用コストに人の介入が必要とされないために、マーケット主導の方法で動的にこれらの定数を調節する方法を模索しています。これらを達成するのも我々の研究のうちに集中しています。</p>
+
+<h3 id="section-2">手数料はどう分配されるのか？</h3>
+<p>与えられた‘エポック’のすべての取引手数料はバーチュアルプール内に集められます。ブロックを作成しその‘エポック’でプルーフオブステークによって‘スロットリーダー’として選ばれた人々にそのプール内からお金を再分配するイメージになります。</p>
+
+<p>今のステージのカルダノでは、IOHKやパートナーによって操作されているノードによって作成されているブロックでは、手数料は集められるが（DDoSを防止するため）分散はされず、その代わり燃焼されます。</p>
+
+<p>カルダノが次の完全な非中央集権のステージを迎える時に、上記のように手数料は分配されます。</p>
+
+<h3 id="section-3">次は何か？</h3>
+<p>手数料分配のための堅実な方式はとても難関な数学の問題です。どうやって良い行動にインセンティブを与え、悪い行動や攻撃を罰するのを効率化するか？どうやってプロトコルに参加している人が公正な収入をを与えられるにはどうしたらいいか？また、カルダノ上でお金を稼ぐための最良の方法はシステムをできるだけ信頼性が高く効率的にすることです。方法としてはノード運営者のインセンティブを「共通の利益」とバランスを取り、システムが最適なパフォーマンスで起動している時に報酬が最高値となるようにします。</p>
+
+<p>この質問はゲーム理論という数学的な規律によって研究されていて、オックスフォード大学の著名なゲーム理論家でゲーデル受賞者であるイライアス コウツウーピアス博士と共にこの問題のソリューションを探しています。</p>
+...
+          </div>
+          <div class="read-more clearfix">
+          
+          <img src="/images/blog/logo.png" alt="" class="hidden">
+          </div>
+          
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 rightcol post-side">
+  <div class="profile">
+    
+    <a href="" style="display: block;">
+      <div class="profile-img">
+        <img src="/images/authors/jane.jpg" alt="">
+      </div>
+      <h2>Jane Wild</h2>
+      <h3>Communications Director of IOHK</h4>
+    </a>
+
+    <div class="social">
+      
+      
+    </div>
+  </div>
+  <p class="latest">LATEST FROM BLOG</p>
+  
+    
+    
+      
+    
+    
+    
+    <div>
+      <em class="fa fa-arrow-right"></em>
+      <div class="content">
+        <a href="/ja/press/how-cardano-transaction-fees-work/">カルダノの取引手数料はどうなっているか</a>
+        <p>Jane Wild</p>
+      </div>
+    </div>
+    
+  
+    
+    
+      
+    
+    
+      
+    
+    
+    
+    <div>
+      <em class="fa fa-arrow-right"></em>
+      <div class="content">
+        <a href="/ja/press/cardano-marks-its-launch-with-tokyo-event/">Cardano、記念すべきローンチを東京のイベントにて行う</a>
+        <p>Jane Wild</p>
+      </div>
+    </div>
+    
+  
+    
+    
+      
+    
+    
+      
+    
+    
+    
+    <div>
+      <em class="fa fa-arrow-right"></em>
+      <div class="content">
+        <a href="/ja/press/cardano-help-desk-tour-arrives-in-tokyo/">Cardanoヘルプデスクツアーが東京に到着</a>
+        <p>Jeremy Wood</p>
+      </div>
+    </div>
+    
+  
+    
+    
+      
+    
+    
+      
+    
+    
+    
+    <div>
+      <em class="fa fa-arrow-right"></em>
+      <div class="content">
+        <a href="/ja/press/passing-the-baton-why-its-time-for-a-new-blockchain/">バトンパス：何故今新しいブロックチェーンが求められているのか？</a>
+        <p>Michael Parsons</p>
+      </div>
+    </div>
+    
+  
+    
+    
+      
+    
+    
+      
+    
+    
+    
+    <div>
+      <em class="fa fa-arrow-right"></em>
+      <div class="content">
+        <a href="/ja/press/cardano-a-blockchain-with-privacy-and-regulation/">カルダノ:プライバシーと規制を兼ね備えたブロックチェーン</a>
+        <p>Michael Parsons</p>
+      </div>
+    </div>
+    
+  
+    
+    
+      
+
+  
+    <div>
+      <p style="font-family: Quicksand;">MORE FROM <a style="font-size: 15px;">BLOG/AUTHOR</a></p>
+    </div>
+    <div class="social_icons">
+      <!-- <a class="slack" href="https://cardano.herokuapp.com" target="_blank"><em class="fa fa-slack"></em></a>
+      <a class="twitter" href="https://twitter.com/CardanoStiftung" target="_blank"><em class="fa fa-twitter"></em></a>
+      <a class="facebook" href="https://facebook.com/CardanoFoundation/" target="_blank"><em class="fa fa-facebook"></em></a>
+      <a class="reddit" href="https://reddit.com/r/cardano" target="_blank"><em class="fa fa-reddit"></em></a>
+      <a class="github" href="https://github.com/input-output-hk/cardano-sl" target="_blank"><em class="fa fa-github"></em></a>
+      <a class="youtube" href="https://www.youtube.com/channel/UCbQ9vGfezru1YRI1zDCtTGg" target="_blank"><em class="fa fa-youtube-play"></em></a> -->
+
+      <i class="fa fa-print"></i>
+      <i class="fa fa-file-pdf-o"></i>
+      <i class="fa fa-envelope"></i>
+      <i class="fa fa-twitter"></i>
+      <i class="fa fa-facebook"></i>
+      <i class="fa fa-linkedin"></i>
+      <i class="fa fa-google-plus"></i>
+      <i class="fa fa-reddit"></i>
+    </div>
+  
+</div>
+
+    </div>
+    
+    
+      
+    
+      
+    
+    
+    
+    
+    
+    <div class="row post-item">
+      <div class="blogpost col-lg-18 col-md-18 col-sm-18">
+        <div class="post-img">
+          <div class="absolute">
+            <div class="date">
               <span class="" style="text-transform: uppercase;">October 12, 2017 &#8226; Jane Wild</span>
             </div>
             <h1 class="title">Cardano、記念すべきローンチを東京のイベントにて行う</h1>
@@ -181,6 +395,24 @@ var lowerie = false;
   </div>
   <p class="latest">LATEST FROM BLOG</p>
   
+    
+    
+      
+    
+    
+    
+    <div>
+      <em class="fa fa-arrow-right"></em>
+      <div class="content">
+        <a href="/ja/press/how-cardano-transaction-fees-work/">カルダノの取引手数料はどうなっているか</a>
+        <p>Jane Wild</p>
+      </div>
+    </div>
+    
+  
+    
+    
+      
     
     
       
@@ -332,6 +564,24 @@ var lowerie = false;
   </div>
   <p class="latest">LATEST FROM BLOG</p>
   
+    
+    
+      
+    
+    
+    
+    <div>
+      <em class="fa fa-arrow-right"></em>
+      <div class="content">
+        <a href="/ja/press/how-cardano-transaction-fees-work/">カルダノの取引手数料はどうなっているか</a>
+        <p>Jane Wild</p>
+      </div>
+    </div>
+    
+  
+    
+    
+      
     
     
       
@@ -496,6 +746,24 @@ var lowerie = false;
     <div>
       <em class="fa fa-arrow-right"></em>
       <div class="content">
+        <a href="/ja/press/how-cardano-transaction-fees-work/">カルダノの取引手数料はどうなっているか</a>
+        <p>Jane Wild</p>
+      </div>
+    </div>
+    
+  
+    
+    
+      
+    
+    
+      
+    
+    
+    
+    <div>
+      <em class="fa fa-arrow-right"></em>
+      <div class="content">
         <a href="/ja/press/cardano-marks-its-launch-with-tokyo-event/">Cardano、記念すべきローンチを東京のイベントにて行う</a>
         <p>Jane Wild</p>
       </div>
@@ -641,6 +909,24 @@ var lowerie = false;
   </div>
   <p class="latest">LATEST FROM BLOG</p>
   
+    
+    
+      
+    
+    
+    
+    <div>
+      <em class="fa fa-arrow-right"></em>
+      <div class="content">
+        <a href="/ja/press/how-cardano-transaction-fees-work/">カルダノの取引手数料はどうなっているか</a>
+        <p>Jane Wild</p>
+      </div>
+    </div>
+    
+  
+    
+    
+      
     
     
       

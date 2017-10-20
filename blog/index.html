@@ -2,7 +2,7 @@
 <html>
   
   <head>
-<title> -  Cardano Foundation</title>
+<title></title>
 <meta charset="utf-8">
 
 <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -141,6 +141,216 @@ var lowerie = false;
         <div class="post-img">
           <div class="absolute">
             <div class="date">
+              <span class="" style="text-transform: uppercase;">October 20, 2017 &#8226; Jane Wild</span>
+            </div>
+            <h1 class="title">How Cardano's transaction fees work</h1>
+            <h2 class="sub-title"></h2>
+          </div>
+          <img src="/images/blog/blog-5.jpg" alt="">
+        </div>
+        <div class="post">
+          <div class="overview">
+            <h3 id="why-do-we-need-transaction-fees">Why do we need transaction fees?</h3>
+
+<p>There are two main reasons why transaction fees are needed for a cryptocurrency like Cardano:</p>
+
+<p>People who run full Cardano nodes spend time, money and effort to run the protocol, for which they should be compensated and rewarded. In contrast to Bitcoin, where new currency is created with each mined block, in Cardano, transaction fees are the only source of income for participants in the protocol.</p>
+
+<p>The second reason for transaction fees is the prevention of DDoS (Distributed Denial of Service) attacks. In a DDoS attack, an attacker tries to flood the network with dummy transactions, and if he has to pay a sufficiently high fee for each of those dummy transactions, this form of attack will become prohibitively expensive for him.</p>
+
+<h3 id="how-do-transaction-fees-work">How do transaction fees work?</h3>
+<p>Whenever somebody wants to transfer an amount of Ada, some minimal fees are computed for that transaction. In order for the transaction to be valid, these minimal fees have to be included (although the sender is free to pay higher fees if he so wishes). All transaction fees are collected in a virtual pool and then later distributed amongst participants in the Cardano protocol.</p>
+
+<h3 id="how-are-the-minimal-transaction-fees-calculated">How are the minimal transaction fees calculated?</h3>
+<p>The minimal fees for a transaction are calculated according to the formula</p>
+
+<p>a + b × size,
+where ‘a’ and ‘b’ are constants and ‘size’ is the size of the transaction in Bytes. At the moment, the constants ‘a’ and ‘b’ have the values</p>
+
+<p>a = 0.155381 ADA,
+b = 0.000043946 ADA/Byte.
+This means that each transaction costs at least 0.155381 ADA, with an additional cost of 0.000043946 ADA per Byte of transaction size. For example, a transaction of size 200 Byte (a fairly typical size) costs</p>
+
+<p>0.155381 ADA + 0.000043946 ADA/Byte × 200 Byte = 0.1641702 ADA.
+Why did we pick this particular formula? — The reason for having parameter ‘a’ is the prevention of DDoS attacks mentioned above: Even a very small dummy transaction should cost enough to hurt an attacker who tries to generate many thousands of them. Parameter ‘b’ has been introduced to reflect actual costs: Storing larger transactions needs more computer memory than storing smaller transactions, so larger transactions should be more expensive than smaller ones.</p>
+
+<p>In order to arrive at the particular values for parameters ‘a’ and ‘b’, we had to answer questions like</p>
+
+<p>How expensive is one byte of computer memory?
+How many transactions will there be on average per second?
+How large will a transaction be on average?
+How much does it cost to run a full node?
+We had to estimate the answers to those questions, but now that Cardano is up and running, we will be able to gather statistics to find more accurate answers. This means that ‘a’ and ‘b’ will probably be adjusted in future to better reflect actual costs.</p>
+
+<p>We even plan to eventually come up with a scheme that will adjust those constants dynamically in a market driven way, so that no human intervention will be needed to react to changes in traffic and operational costs. How to achieve this is one focus of our active research.</p>
+
+<h3 id="how-are-fees-distributed">How are fees distributed?</h3>
+<p>All transaction fees of a given “epoch” are collected in a virtual pool, and the idea is to then redistribute the money from that pool amongst people who were elected “slot leaders” by the proof of stake algorithm during that epoch and who created blocks.At this stage of Cardano, where all blocks are created by nodes operated by IOHK and our partners, fees are already collected (to prevent DDoS attacks), but they will not be distributed and instead will be burnt.</p>
+
+<p>As soon as Cardano enters its next, fully decentralized stage, fees will be distributed as described above.</p>
+
+<h3 id="what-next">What next?</h3>
+<p>Coming up with a solid scheme for fee distribution is a challenging mathematical problem: How do we incentivize “good” behavior and promote efficiency while punishing “bad” behavior and attacks? How do we make sure that people who participate in the protocol receive their fair reward, while also ensuring that the best way to earn money with Cardano is to make the system as reliable and efficient as possible? The trick is to align incentives for node operators with the “common good”, so that rewards are highest when the system is running at optimal performance.</p>
+
+<p>These are questions studied by the mathematical discipline called Game Theory, and we are proud to have prominent game theorist and Gödel Award laureate Prof. Elias Koutsoupias of the University of Oxford working with us on finding solutions to this problem.</p>
+...
+          </div>
+          <div class="read-more clearfix">
+          
+          <img src="/images/blog/logo.png" alt="" class="hidden">
+          </div>
+          
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 rightcol post-side">
+  <div class="profile">
+    
+    <a href="" style="display: block;">
+      <div class="profile-img">
+        <img src="/images/authors/jane.jpg" alt="">
+      </div>
+      <h2>Jane Wild</h2>
+      <h3>Communications Director of IOHK</h4>
+    </a>
+
+    <div class="social">
+      
+      
+    </div>
+  </div>
+  <p class="latest">LATEST FROM BLOG</p>
+  
+    
+    
+    
+    <div>
+      <em class="fa fa-arrow-right"></em>
+      <div class="content">
+        <a href="/press/how-cardano-transaction-fees-work/">How Cardano's transaction fees work</a>
+        <p>Jane Wild</p>
+      </div>
+    </div>
+    
+  
+    
+    
+      
+    
+    
+      
+    
+    
+    
+    <div>
+      <em class="fa fa-arrow-right"></em>
+      <div class="content">
+        <a href="/press/cardano-marks-its-launch-with-tokyo-event/">Cardano marks its launch with Tokyo event</a>
+        <p>Jane Wild</p>
+      </div>
+    </div>
+    
+  
+    
+    
+      
+    
+    
+      
+    
+    
+    
+    <div>
+      <em class="fa fa-arrow-right"></em>
+      <div class="content">
+        <a href="/press/cardano-help-desk-tour-arrives-in-tokyo/">Cardano help desk tour arrives in Tokyo</a>
+        <p>Jeremy Wood</p>
+      </div>
+    </div>
+    
+  
+    
+    
+      
+    
+    
+      
+    
+    
+    
+    <div>
+      <em class="fa fa-arrow-right"></em>
+      <div class="content">
+        <a href="/press/passing-the-baton-why-its-time-for-a-new-blockchain/">Passing the baton: Why it’s time for a new blockchain</a>
+        <p>Michael Parsons</p>
+      </div>
+    </div>
+    
+  
+    
+    
+      
+    
+    
+      
+    
+    
+    
+    <div>
+      <em class="fa fa-arrow-right"></em>
+      <div class="content">
+        <a href="/press/cardano-a-blockchain-with-privacy-and-regulation/">Cardano: A Blockchain with Privacy and Regulation</a>
+        <p>Michael Parsons</p>
+      </div>
+    </div>
+    
+  
+    
+    
+      
+    
+    
+      
+
+  
+    <div>
+      <p style="font-family: Quicksand;">MORE FROM <a style="font-size: 15px;">BLOG/AUTHOR</a></p>
+    </div>
+    <div class="social_icons">
+      <!-- <a class="slack" href="https://cardano.herokuapp.com" target="_blank"><em class="fa fa-slack"></em></a>
+      <a class="twitter" href="https://twitter.com/CardanoStiftung" target="_blank"><em class="fa fa-twitter"></em></a>
+      <a class="facebook" href="https://facebook.com/CardanoFoundation/" target="_blank"><em class="fa fa-facebook"></em></a>
+      <a class="reddit" href="https://reddit.com/r/cardano" target="_blank"><em class="fa fa-reddit"></em></a>
+      <a class="github" href="https://github.com/input-output-hk/cardano-sl" target="_blank"><em class="fa fa-github"></em></a>
+      <a class="youtube" href="https://www.youtube.com/channel/UCbQ9vGfezru1YRI1zDCtTGg" target="_blank"><em class="fa fa-youtube-play"></em></a> -->
+
+      <i class="fa fa-print"></i>
+      <i class="fa fa-file-pdf-o"></i>
+      <i class="fa fa-envelope"></i>
+      <i class="fa fa-twitter"></i>
+      <i class="fa fa-facebook"></i>
+      <i class="fa fa-linkedin"></i>
+      <i class="fa fa-google-plus"></i>
+      <i class="fa fa-reddit"></i>
+    </div>
+  
+</div>
+
+    </div>
+    
+    
+      
+    
+      
+    
+    
+    
+    
+    
+    <div class="row post-item">
+      <div class="blogpost col-lg-18 col-md-18 col-sm-18">
+        <div class="post-img">
+          <div class="absolute">
+            <div class="date">
               <span class="" style="text-transform: uppercase;">October 12, 2017 &#8226; Jane Wild</span>
             </div>
             <h1 class="title">Cardano marks its launch with Tokyo event</h1>
@@ -179,6 +389,24 @@ var lowerie = false;
   </div>
   <p class="latest">LATEST FROM BLOG</p>
   
+    
+    
+    
+    <div>
+      <em class="fa fa-arrow-right"></em>
+      <div class="content">
+        <a href="/press/how-cardano-transaction-fees-work/">How Cardano's transaction fees work</a>
+        <p>Jane Wild</p>
+      </div>
+    </div>
+    
+  
+    
+    
+      
+    
+    
+      
     
     
     
@@ -330,6 +558,24 @@ var lowerie = false;
   </div>
   <p class="latest">LATEST FROM BLOG</p>
   
+    
+    
+    
+    <div>
+      <em class="fa fa-arrow-right"></em>
+      <div class="content">
+        <a href="/press/how-cardano-transaction-fees-work/">How Cardano's transaction fees work</a>
+        <p>Jane Wild</p>
+      </div>
+    </div>
+    
+  
+    
+    
+      
+    
+    
+      
     
     
     
@@ -491,6 +737,24 @@ var lowerie = false;
     <div>
       <em class="fa fa-arrow-right"></em>
       <div class="content">
+        <a href="/press/how-cardano-transaction-fees-work/">How Cardano's transaction fees work</a>
+        <p>Jane Wild</p>
+      </div>
+    </div>
+    
+  
+    
+    
+      
+    
+    
+      
+    
+    
+    
+    <div>
+      <em class="fa fa-arrow-right"></em>
+      <div class="content">
         <a href="/press/cardano-marks-its-launch-with-tokyo-event/">Cardano marks its launch with Tokyo event</a>
         <p>Jane Wild</p>
       </div>
@@ -638,6 +902,24 @@ var lowerie = false;
   </div>
   <p class="latest">LATEST FROM BLOG</p>
   
+    
+    
+    
+    <div>
+      <em class="fa fa-arrow-right"></em>
+      <div class="content">
+        <a href="/press/how-cardano-transaction-fees-work/">How Cardano's transaction fees work</a>
+        <p>Jane Wild</p>
+      </div>
+    </div>
+    
+  
+    
+    
+      
+    
+    
+      
     
     
     
